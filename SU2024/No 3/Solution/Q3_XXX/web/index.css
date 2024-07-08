@@ -1,4 +1,7 @@
-
+body{
+    height: 100vh;
+    overflow: hidden;
+}
 .container {
     display: flex;
     flex-direction: row;
@@ -6,7 +9,7 @@
     align-items: stretch;
     gap: 20px;
     padding: 20px;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .table-container, .information-container {
@@ -59,7 +62,7 @@ form {
 }
 
 .form-group {
-    display: contents; 
+    display: contents;
 }
 
 .form-group label {

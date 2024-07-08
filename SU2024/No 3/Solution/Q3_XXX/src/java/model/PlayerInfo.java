@@ -8,22 +8,23 @@ package model;
  *
  * @author DUYTHAI
  */
-public class Player {
+public class PlayerInfo {
+
     String playerId;
-    String playerName; 
+    String playerName;
     String position;
     int salary;
-    String teamId;
+    String teamName;
 
-    public Player() {
+    public PlayerInfo() {
     }
 
-    public Player(String playerId, String playerName, String position, int salary, String teamId) {
+    public PlayerInfo(String playerId, String playerName, String position, int salary, String teamName) {
         this.playerId = playerId;
         this.playerName = playerName;
         this.position = position;
         this.salary = salary;
-        this.teamId = teamId;
+        this.teamName = teamName;
     }
 
     public String getPlayerId() {
@@ -58,17 +59,17 @@ public class Player {
         this.salary = salary;
     }
 
-    public String getTeamId() {
-        return teamId;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setTeamId(String teamId) {
-        this.teamId = teamId;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "playerId=" + playerId + ", playerName=" + playerName + ", position=" + position + ", salary=" + salary + ", teamId=" + teamId + '}';
+        return "PlayerInfo{" + "playerId=" + playerId + ", playerName=" + playerName + ", position=" + position + ", salary=" + salary + ", teamName=" + teamName + '}';
     }
-    
+
 }
