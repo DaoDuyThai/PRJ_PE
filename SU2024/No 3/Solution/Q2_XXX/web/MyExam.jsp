@@ -8,7 +8,7 @@
     </head>
     <body>
         <div style="margin: auto">
-            <form style="margin: auto">
+            <form style="margin: auto" action="PlayerController" method="post">
                 <table>
                     <tr>
                         <td colspan="2" style="text-align: center">PLAYER INFORMATION</td>
@@ -25,10 +25,10 @@
                         <td>Position:</td>
                         <td>
                             <select name="position">
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
+                                <option value="striker">Striker</option>
+                                <option value="goalkeeper">Goalkeeper</option>
+                                <option value="defender">Defender</option>
+                                <option value="midfielder">Midfielder</option>
                             </select>
                         </td>
                     </tr>
@@ -45,7 +45,7 @@
                     <tr>
                     </tr>
                 </table>
-                Your text
+                <p style="color: red">${errorMessage}</p>
                 <table border="1">
                     <tr>
                         <td>Code</td>
@@ -53,6 +53,14 @@
                         <td>Position</td>
                         <td>Salary</td>
                     </tr>
+                    <c:forEach var="player" items="${players}">
+                        <tr>
+                            <td>${player.code}</td>
+                            <td>${player.name}</td>
+                            <td>${player.position}</td>
+                            <td>${player.salary}</td>
+                        </tr>
+                    </c:forEach>
                 </table>
             </form>
         </div>
