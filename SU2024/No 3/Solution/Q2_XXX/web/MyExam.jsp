@@ -8,7 +8,7 @@
     </head>
     <body>
         <div style="margin: auto">
-            <form style="margin: auto" action="PlayerController" method="post">
+            <form style="margin: auto" action="player" method="post">
                 <table>
                     <tr>
                         <td colspan="2" style="text-align: center">PLAYER INFORMATION</td>
@@ -25,10 +25,10 @@
                         <td>Position:</td>
                         <td>
                             <select name="position">
-                                <option value="striker">Striker</option>
-                                <option value="goalkeeper">Goalkeeper</option>
-                                <option value="defender">Defender</option>
-                                <option value="midfielder">Midfielder</option>
+                                <option value="Striker">Striker</option>
+                                <option value="Goalkeeper">Goalkeeper</option>
+                                <option value="Defender">Defender</option>
+                                <option value="Midfielder">Midfielder</option>
                             </select>
                         </td>
                     </tr>
@@ -40,12 +40,12 @@
                         <td style="text-align: center" colspan="2"><input type="submit" value="CREATE" name="create"></td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="color: red"><i></i></td>
+                        <td colspan="2" style="color: red">${errorMessage}<i></i></td>
                     </tr>
                     <tr>
                     </tr>
                 </table>
-                <p style="color: red">${errorMessage}</p>
+                List of Players:
                 <table border="1">
                     <tr>
                         <td>Code</td>
@@ -53,13 +53,14 @@
                         <td>Position</td>
                         <td>Salary</td>
                     </tr>
-                    <c:forEach var="player" items="${players}">
+                    <c:forEach items="${players}" var="p">
                         <tr>
-                            <td>${player.code}</td>
-                            <td>${player.name}</td>
-                            <td>${player.position}</td>
-                            <td>${player.salary}</td>
+                            <td>${p.code}</td>
+                            <td>${p.name}</td>
+                            <td>${p.position}</td>
+                            <td>${p.salary}</td>
                         </tr>
+
                     </c:forEach>
                 </table>
             </form>

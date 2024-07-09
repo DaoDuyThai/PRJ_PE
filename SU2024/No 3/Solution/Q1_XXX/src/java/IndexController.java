@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * @author DUYTHAI
  */
 @WebServlet(urlPatterns = {"/exe"})
-public class ExeController extends HttpServlet {
+public class IndexController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,10 +35,10 @@ public class ExeController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ExeController</title>");
+            out.println("<title>Servlet IndexController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ExeController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet IndexController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -73,30 +73,31 @@ public class ExeController extends HttpServlet {
         PrintWriter out = response.getWriter();
         String num1Str = request.getParameter("a");
         String num2Str = request.getParameter("b");
+
         if (num1Str == null || num1Str.isEmpty() || num2Str == null || num2Str.isEmpty()) {
             out.println("<p>You must input texts</p>");
-            return;
         }
+
         int num1, num2;
         try {
             num1 = Integer.parseInt(num1Str);
             num2 = Integer.parseInt(num2Str);
-
             if (num1 <= 0 || num2 <= 0) {
-                out.println("<p>You must input an integer > 0</p>");
+                out.println("<p>You must input an interger > 0</p>");
                 return;
             }
-        } catch (NumberFormatException e) {
-            out.println("<p>You must input an integer > 0</p>");
-            return;
-        }
-        out.print("<p>");
-        for (int i = 1; i <= Math.min(num1, num2); i++) {
-            if (num1 % i == 0 && num2 % i == 0) {
-                out.print(i + " ");
+
+            out.print("<p>");
+            for (int i = 1; i <= Math.min(num1, num2); i++) {
+                if (num1 % i == 0 && num2 % i == 0) {
+                    out.print(i + " ");
+                }
             }
+            out.print("</p>");
+
+        } catch (NumberFormatException e) {
+            out.println("<p>You must input an interger > 0</p>");
         }
-        out.println("</p>");
 
     }
 

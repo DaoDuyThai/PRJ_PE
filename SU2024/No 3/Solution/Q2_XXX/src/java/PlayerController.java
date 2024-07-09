@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author DUYTHAI
  */
-@WebServlet(urlPatterns = {"/PlayerController"})
+@WebServlet(urlPatterns = {"/player"})
 public class PlayerController extends HttpServlet {
 
     /**
@@ -84,36 +84,37 @@ public class PlayerController extends HttpServlet {
         String name = request.getParameter("name");
         String position = request.getParameter("position");
         String salaryStr = request.getParameter("salary");
+
         int salary = 0;
 
         String errorMessage = "";
         boolean valid = true;
 
-        // Validate code
-        for (Player player : players) {
-            if (player.getCode().equals(code)) {
-                errorMessage = "Code existed?";
+        //Validate if code exist
+        for (Player p : players) {
+            if (p.getCode().equalsIgnoreCase(code)) {
+                errorMessage = "Code existed!";
                 valid = false;
                 break;
             }
         }
 
-        // Validate salary
+        //Validate salary
         try {
             salary = Integer.parseInt(salaryStr);
             if (salary <= 0) {
                 errorMessage = "You must input an integer > 0 for salary!";
                 valid = false;
             }
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             errorMessage = "You must input an integer > 0 for salary!";
             valid = false;
         }
 
-        // If valid, add player to list
+        //add player
         if (valid) {
-            Player newPlayer = new Player(code, name, position, salary);
-            players.add(newPlayer);
+            Player p = new Player(code, name, position, salary);
+            players.add(p);
         }
 
         session.setAttribute("players", players);
