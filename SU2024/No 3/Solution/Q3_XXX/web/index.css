@@ -1,0 +1,82 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 9, 2024, 8:51:52 PM
+    Author     : DUYTHAI
+*/
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+}
+
+.table-container, .information-container{
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    align-self: center
+}
+
+.table-container{
+    width: 20%;
+}
+
+.information-container{
+    
+}
+
+.list-header{
+    text-align: center;
+    padding: 5px;
+    width: calc[100%-10px];
+    border: 1px solid black;
+}
+
+.info-header{
+    text-align: center;
+    padding: 5px;
+    text-decoration: underline
+}
+
+.list-item{
+    width: calc[100%-10px];
+    padding: 5px;
+    border: 1px solid black
+}
+
+form{
+    display: grid;
+    grid-template-columns: 100px 200px auto;
+    gap: 10px;
+}
+
+.form-group{
+    display: contents;
+}
+
+.form-group label {
+    grid-column: 1;
+}
+
+.form-group input {
+    grid-column: 2;
+}
+
+
+
+
+
+
+
