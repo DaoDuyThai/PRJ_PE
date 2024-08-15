@@ -24,7 +24,7 @@ To run PRJ_PE locally, please ensure that you have the following prerequisites i
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/DuyThaiddt/PRJ_PE
+    git clone https://github.com/DaoDuyThai/PRJ_PE
     ```
 
 2. **Navigate to the project directory:**
